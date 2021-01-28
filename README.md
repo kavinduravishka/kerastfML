@@ -15,7 +15,7 @@ Before the kwasir-dataset archive is extracted, the directory tree will look lik
 ├── main.py
 └── README.md
 
-Extract kwasir-dataset in to the same folder where"main.py" file exists
+Extract kwasir-dataset in to the same folder where the "main.py" file exists
 After doing it the directory tree shold look like the following
 
 .
