@@ -20,10 +20,11 @@
 
 			Learn: class that runs learning tasks on the model given data. It is tied to one or more models to perform dynamic operations.
 				It encapsulates tasks like
-
-				1) making prediction
-				2) extracting features
-				3) serializing and deserializing trained model from a file.
+                
+                1) train models
+				2) making prediction
+				3) extracting features
+				4) serializing and deserializing trained model to/from a file.
 
 				It connects model and data, kinda like the C in MVC.
 
@@ -50,9 +51,9 @@
 
 	.
 	├── data
-	│   ├── .....
+	│   ├── .....
 	├── learn
-	│   ├── .....
+	│   ├── .....
 	├── model
 	│   ├── .....
 	├── main.py
@@ -63,18 +64,18 @@
 
 	.
 	├── data
-	│   ├── .....
+	│   ├── .....
 	├── kvasir-dataset
-	│   ├── dyed-lifted-polyps
-	│   ├── dyed-resection-margins
-	│   ├── esophagitis
-	│   ├── normal-cecum
-	│   ├── normal-pylorus
-	│   ├── normal-z-line
-	│   ├── polyps
-	│   └── ulcerative-colitis
+	│   ├── dyed-lifted-polyps
+	│   ├── dyed-resection-margins
+	│   ├── esophagitis
+	│   ├── normal-cecum
+	│   ├── normal-pylorus
+	│   ├── normal-z-line
+	│   ├── polyps
+	│   └── ulcerative-colitis
 	├── learn
-	│   ├── .....
+	│   ├── .....
 	├── model
 	│   ├── .....
 	├── main.py
