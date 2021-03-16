@@ -2,7 +2,7 @@ from model.cnn.cnn import convolutional_cnn
 from data.batch import batch
 import os
 
-from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.optimizers import Adam,RMSprop
 
 class learner():
     def __init__(self,batchdirectory):
@@ -33,7 +33,7 @@ class learner():
         return self
     
     def trainModal(self):
-        self.cnn.compilemodel(Adam,0.01,'categorical_crossentropy',['accuracy'])
+        self.cnn.compilemodel(RMSprop,1e-4,'categorical_crossentropy',['accuracy'])
         self.cnn.fit(self.get_trainbatch(),self.get_validbatch())
     
     def loadModel(self):
