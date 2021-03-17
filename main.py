@@ -9,7 +9,7 @@ from data.dirmanager import dirmanager
 from cmd import Cmd
 
 dmngr = dirmanager(datadirectory,batchdirectory)
-learner = learner(batchdirectory)
+mlearner = learner(batchdirectory)
 
 class kerasMLcli(Cmd):
     prompt = 'Keras ML > '
@@ -34,25 +34,25 @@ class kerasMLcli(Cmd):
 
 
     def do_newmodel(self,inp):
-        learner.newModal()
+        mlearner.newModal()
         
     def do_loadmodel(self,inp):
-        learner.loadModel(inp)
+        mlearner.loadModel(inp)
         
     def do_savemodel(self,inp):
-        learner.saveModel(inp)
+        mlearner.saveModel(inp)
         
     def do_trainmodel(self,inp):
-        learner.trainModel()
+        mlearner.trainModel()
         
     def do_testmodel(self,inp):
-        learner.testmodel()
+        mlearner.testmodel()
         
     def do_listmodel(self,inp):
-        learner.listModel()
+        mlearner.listModel()
         
     def do_summary(self,inp):
-        learner.cnn.summary()
+        mlearner.cnn.summary()
         
     
     def help_newmodel(self):
@@ -73,7 +73,7 @@ class kerasMLcli(Cmd):
     def help_listmodel(self):
         print('List saved models')
         
-    def help_summary(self,inp):
+    def help_summary(self):
         print('Print summary of currently loaded CNN')
         
     
