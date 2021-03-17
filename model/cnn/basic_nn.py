@@ -10,13 +10,14 @@ class basic_nn:
         self.model.compile(optimizer=optimizer(learning_rate=learning_rate),loss=loss,metrics=metrics)
         
     def fit(self,train_batches,valid_batches,epochs=20):
-        self.model.fit(x=train_batches.iterset,
+        fit_history = self.model.fit(x=train_batches.iterset,
             steps_per_epoch=train_batches.length,
             validation_data=valid_batches.iterset,
             validation_steps=valid_batches.length,
             epochs=epochs,
             verbose=2
             )
+        return fit_history
         
     def predict(self,test_batches):
         self.predictions = self.model.predict(x=test_batches.iterset, steps=test_batches.length, verbose=0)

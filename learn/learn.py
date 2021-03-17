@@ -47,7 +47,9 @@ class learner():
         try:
             if self.cnnTrainable == True:
                 self.cnn.compilemodel(RMSprop,1e-4,'categorical_crossentropy',['accuracy'])
-                self.cnn.fit(self.get_trainbatch(),self.get_validbatch())
+                history = self.cnn.fit(self.get_trainbatch(),self.get_validbatch())
+                
+                self.plot_train_history(history)
             else:
                 print("CNN is not trainable")
         except AttributeError:
@@ -126,3 +128,29 @@ class learner():
         plt.tight_layout()
         plt.ylabel('True label')
         plt.xlabel('Predicted label')
+        
+    def plot_train_history(fit_history):
+        acc = fit_history.history['accuracy']
+        val_acc = fit_history.history['val_accuracy']
+        
+        loss = fit_history.history['loss']
+        val_loss = fit_history.history['val_loss']
+        
+        plt.figure(figsize=(8, 8))
+        plt.subplot(2, 1, 1)
+        plt.plot(acc, label='Training Accuracy')
+        plt.plot(val_acc, label='Validation Accuracy')
+        plt.ylim([0, 1])
+        
+        plt.legend(loc='lower right')
+        plt.title('Training and Validation Accuracy')
+        
+        plt.subplot(2, 1, 2)
+        plt.plot(loss, label='Training Loss')
+        plt.plot(val_loss, label='Validation Loss')
+        plt.ylim([0, 1.0])
+        
+        plt.legend(loc='upper right')
+        plt.title('Training and Validation Loss')
+        plt.xlabel('epoch')
+        plt.show()
