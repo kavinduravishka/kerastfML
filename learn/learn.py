@@ -43,7 +43,7 @@ class learner():
         print("New CNN model initiated")
         return self
     
-    def trainModal(self):
+    def trainModel(self):
         try:
             if self.cnnTrainable == True:
                 self.cnn.compilemodel(RMSprop,1e-4,'categorical_crossentropy',['accuracy'])
