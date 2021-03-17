@@ -10,7 +10,7 @@
 
 			Data: data or more accurately data manager that takes charges of managing the dataset
 
-				1) download/organize data;
+				1) organize data;
 				2) format data;
 				3) store data in a folder/database;
 				4) generate input; 

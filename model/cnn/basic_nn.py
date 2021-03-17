@@ -1,3 +1,5 @@
+from tensorflow import keras
+
 class basic_nn:
     def __init__(self,labelcount,input_shape):
         self.labelcount=labelcount
@@ -17,7 +19,7 @@ class basic_nn:
             )
         
     def predict(self,test_batches):
-        self.predictions = self.model.predict(x=test_batches, steps=len(test_batches), verbose=0)
+        self.predictions = self.model.predict(x=test_batches.iterset, steps=test_batches.length, verbose=0)
         return self
     
     def getresult(self):
@@ -26,8 +28,8 @@ class basic_nn:
     def summary(self):
         self.model.summary()
         
-    def serialize(self,path,name):
-        pass
+    def serialize(self,name):
+        self.model.save(name)
     
-    def deserialize(self,path):
-        pass
+    def deserialize(self,name):
+        self.model = keras.models.load_model(name)
