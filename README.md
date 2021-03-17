@@ -109,6 +109,20 @@
     dmngr = dirmanager(datadirectory,batchdirectory)
     mlearner = learner(batchdirectory)
     
+
+# step 5   
+# use following commands to train and run
+
+## create nesessary structures
+        1st step - dmngr.createdirs() - create directories
+        2nd step - dmngr.movedata(360,90,50) - move data into separate folders
+
+## train and test
+        mlearner.newModel() - ner CNN  model        
+        mlearner.trainModel() - train available model
+        mlearnel.saveModel(<name>) - save trained model
+        mlearner.testModel() - test model after training
     
-# use  following commands to train and run
-        
+## save and load    
+        mlearner.loadModel(<name>) - load saved model
+        mlearner.listModel() - list available saved models
