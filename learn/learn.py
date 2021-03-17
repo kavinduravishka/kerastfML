@@ -47,9 +47,9 @@ class learner():
         try:
             if self.cnnTrainable == True:
                 self.cnn.compilemodel(RMSprop,1e-4,'categorical_crossentropy',['accuracy'])
-                history = self.cnn.fit(self.get_trainbatch(),self.get_validbatch())
+                self.history = self.cnn.fit(self.get_trainbatch(),self.get_validbatch())
                 
-                self.plot_train_history(history)
+                self.plot_train_history(self.history)
             else:
                 print("CNN is not trainable")
         except AttributeError:
@@ -129,7 +129,7 @@ class learner():
         plt.ylabel('True label')
         plt.xlabel('Predicted label')
         
-    def plot_train_history(fit_history):
+    def plot_train_history(self,fit_history):
         acc = fit_history.history['accuracy']
         val_acc = fit_history.history['val_accuracy']
         
