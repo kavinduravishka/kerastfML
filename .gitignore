@@ -2,3 +2,4 @@ kvasir-dataset/
 .spyproject/
 databatch/
 *.pyc
+model/saved/
