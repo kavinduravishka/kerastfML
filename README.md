@@ -120,9 +120,9 @@
 ## train and test
         mlearner.newModel() - ner CNN  model        
         mlearner.trainModel() - train available model
-        mlearnel.saveModel(<name>) - save trained model
         mlearner.testModel() - test model after training
     
 ## save and load    
         mlearner.loadModel(<name>) - load saved model
+        mlearnel.saveModel(<name>) - save trained model
         mlearner.listModel() - list available saved models
