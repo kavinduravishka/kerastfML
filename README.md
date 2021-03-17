@@ -45,6 +45,12 @@
 
 
 # step 1
+# Moving code files into google colab
+
+    move this folder into google colab or clone the following repo into google colab
+    https://github.com/kavinduravishka/kerastfML 
+    
+# step 2
 # Preparing directories and training data set before first run
 
 	Before the kwasir-dataset archive is extracted, the directory tree will look like this
@@ -60,7 +66,7 @@
 	└── README.md
 
 	Extract kwasir-dataset in to the same folder where the "main.py" file exists
-	After doing it the directory tree shold look like the following
+	After doing it the directory tree should look like the following
 
 	.
 	├── data
@@ -82,3 +88,27 @@
 	└── README.md
 
 	If the data set is not placesd within the right directory with right directory structure, it will be caused for runtime errors
+
+
+# step 3
+# get into kerastfML folder in colab
+
+# step 4
+# run following code in colab
+
+    import os
+
+    modpath = os.getcwd() + '/'
+    datadirectory = modpath+'kvasir-dataset/'
+    batchdirectory = modpath+'databatch/'
+    
+    from learn.learn import learner
+    from data.dirmanager import dirmanager
+    from cmd import Cmd
+    
+    dmngr = dirmanager(datadirectory,batchdirectory)
+    mlearner = learner(batchdirectory)
+    
+    
+# use  following commands to train and run
+        
