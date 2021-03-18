@@ -37,7 +37,7 @@ class learner():
         trainbatch.getFromDir(self.testdir,shuffle=False)
         return trainbatch
     
-    def newModal(self):
+    def newModel(self):
         self.cnn = convolutional_cnn()
         self.cnnTrainable = True
         print("New CNN model initiated")
